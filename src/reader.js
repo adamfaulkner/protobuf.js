@@ -330,6 +330,7 @@ Reader.prototype.string = function read_string() {
     var length = this.uint32();
     var start = this.pos;
     var end = this.pos + length;
+    this.pos += length;
     return utf8.read(this.buf, start, end);
 };
 
