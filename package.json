@@ -107,6 +107,7 @@
     "dist/**",
     "ext/**",
     "google/**",
-    "src/**"
+    "src/**",
+    "lib/utf8/**"
   ]
 }
