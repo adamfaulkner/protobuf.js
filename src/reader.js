@@ -327,8 +327,10 @@ Reader.prototype.bytes = function read_bytes() {
  * @returns {string} Value read
  */
 Reader.prototype.string = function read_string() {
-    var bytes = this.bytes();
-    return utf8.read(bytes, 0, bytes.length);
+    var length = this.uint32();
+    var start = this.pos;
+    var end = this.pos + length;
+    return utf8.read(this.buf, start, end);
 };
 
 /**
